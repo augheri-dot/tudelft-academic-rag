@@ -1,0 +1,45 @@
+services:
+  tudelft_dev_env:
+    image: tudelft-academic-rag-dev-env
+    container_name: tudelft_dev_env
+    volumes:
+      - .:/app
+    ports:
+      - "8001:8000"
+      - "8502:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    networks:
+      - tudelft_net
+    command: tail -f /dev/null
+
+  tudelft_qdrant:
+    image: qdrant/qdrant:latest
+    container_name: tudelft_qdrant
+    ports:
+      - "6335:6333"
+      - "6336:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - tudelft_net
+
+  tudelft_redis:
+    image: redis:alpine
+    container_name: tudelft_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - tudelft_net
+
+networks:
+  tudelft_net:
+    driver: bridge
+
+volumes:
+  qdrant_data:

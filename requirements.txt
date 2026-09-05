@@ -1,0 +1,37 @@
+# PyTorch CPU-Only (Optimized for minimal disk footprint)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.0.0
+
+# Core Data & Async Libraries
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+requests>=2.31.0
+tenacity>=8.2.0
+pandas>=2.0.0
+pyarrow>=12.0.0
+
+# Vector DB & Storage Drivers
+qdrant-client>=1.7.0
+azure-storage-blob>=12.19.0
+redis>=5.0.0
+
+# Workflow Orchestration
+prefect>=2.14.0
+
+# AI, LLM & RAG Frameworks
+openai>=1.10.0
+sentence-transformers>=2.2.2
+ragas>=0.1.0
+langfuse>=2.0.0
+
+# Backend Services & Web Interface
+fastapi>=0.109.0
+uvicorn>=0.27.0
+streamlit>=1.30.0
+
+# Testing & Utility Tools
+pytest>=8.0.0
+fpdf2>=2.7.0
+python-dotenv>=1.0.0
+pypdf>=3.17.0
+PyMuPDF==1.28.2

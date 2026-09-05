@@ -1,0 +1,25 @@
+# Sensitive Data & Environment
+.env
+*.env
+
+# Data Lakehouse & Local Datasets
+data/
+*.parquet
+*.json
+*.jsonl
+*.gz
+
+# Backup Files & Logs
+*.bak*
+*backup*
+*.log
+
+# Python & Testing Artifacts
+__pycache__/
+*.pyc
+venv/
+.venv/
+scripts/
+tests/
+test_*.py
+check_*.py
